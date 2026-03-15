@@ -34,7 +34,6 @@ ENV/
 data/external/*
 !data/external/.gitkeep
 
-# Nếu không muốn commit synthetic data:
 # data/synthetic/*
 # !data/synthetic/.gitkeep
 
@@ -69,3 +68,5 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+experiments/results/
