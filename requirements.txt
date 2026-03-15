@@ -1,0 +1,35 @@
+# ── Core Data Science ──────────────────────────────────────────────────────────
+numpy==1.26.4
+pandas==2.2.1
+scipy==1.13.0
+
+# ── Machine Learning ───────────────────────────────────────────────────────────
+scikit-learn==1.4.2
+imbalanced-learn==0.12.2        # xử lý imbalanced dataset (liên quan survivorship bias)
+
+# ── Visualization ──────────────────────────────────────────────────────────────
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.21.0                  # interactive charts cho bias_charts
+
+# ── Notebook & Reporting ───────────────────────────────────────────────────────
+jupyter==1.0.0
+ipykernel==6.29.4
+nbformat==5.10.4
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+tqdm==4.66.2                    # progress bar cho simulation loops
+python-dotenv==1.0.1            # quản lý env variables (Kaggle API key...)
+PyYAML==6.0.1                   # config files cho experiments
+
+# ── Data Sources ───────────────────────────────────────────────────────────────
+kaggle==1.6.12                  # Kaggle API (optional)
+ucimlrepo==0.0.6                # UCI ML Repository
+
+# ── Statistical Testing ────────────────────────────────────────────────────────
+statsmodels==0.14.2             # calibration, hypothesis testing
+pingouin==0.5.4                 # effect size, statistical power
+
+# ── Code Quality ───────────────────────────────────────────────────────────────
+black==24.4.2
+flake8==7.0.0
