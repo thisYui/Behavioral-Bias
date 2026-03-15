@@ -240,13 +240,15 @@ def compute_calibration_metrics(
         return {}
 
     # ECE: average |predicted - actual| weighted by bin size
+    # calibration_curve chỉ trả về bins có data → align bằng counts_nonzero
     counts, bin_edges = np.histogram(y_proba, bins=n_bins, range=(0, 1))
-    # Chỉ tính bins có data
-    valid = counts > 0
-    if valid.sum() == 0:
+    counts_nonzero = counts[counts > 0]
+
+    if len(counts_nonzero) == 0:
         return {}
 
-    ece = float(np.sum(np.abs(prob_true - prob_pred) * counts[valid[:len(prob_true)]]) / len(y_true))
+    n = min(len(prob_true), len(counts_nonzero))
+    ece = float(np.sum(np.abs(prob_true[:n] - prob_pred[:n]) * counts_nonzero[:n]) / len(y_true))
     mce = float(np.max(np.abs(prob_true - prob_pred)))
     overconf_idx = float(np.mean(y_proba) - np.mean(y_true))
 

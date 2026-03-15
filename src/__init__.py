@@ -36,6 +36,11 @@ from src.models.baseline_model import (
 from src.models.biased_model_selection import (
     simulate_biased_selection,
     SelectionBiasResult,
+    fish_decision_threshold,
+    cherry_pick_metric,
+    simulate_test_set_reuse,
+    fish_hyperparameters,
+    selective_reporting,
 )
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
@@ -84,7 +89,9 @@ __all__ = [
     "simulate_overconfidence_bias", "OverconfidenceResult",
     # models
     "build_model", "train_model", "train_baseline", "train_all_baselines", "ModelResult",
-    "simulate_biased_selection", "SelectionBiasResult",
+    "simulate_biased_selection", "SelectionBiasResult", "fish_decision_threshold",
+    "cherry_pick_metric", "simulate_test_set_reuse","fish_hyperparameters",
+    "selective_reporting",
     # metrics
     "compute_classification_metrics", "compute_calibration_metrics",
     "compute_bias_impact", "compare_baseline_vs_biased",
